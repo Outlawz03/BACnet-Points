@@ -1,0 +1,2395 @@
+<?xml version="1.0"?>
+
+<!--[DocumentInformation]
+Created: 2014-07-09 07:45
+Modified: 2015-02-05 10:38
+-->
+<?tgml version="1.21"?><Tgml ComponentCounter="109" GridSize="5"
+    Height="900.0" LayerCounter="3" Width="1710.0">
+    <Component Clip="False" ContentHeight="40.0" ContentWidth="100.0"
+        Height="40.0" Id="SaTmp" Left="100.0" Name="" Top="65.0" Width="100.0">
+        <Group Name="binds">
+            <Bind Description="ValueBind" Name="SaTmp">
+                <Expose ExposedAttribute="Name" Name="ValueBind"/>
+            </Bind>
+            <Bind Description="ForceBind" DynamicUpdates="Enable"
+                Name="SaTmp.OutOfService" PreventDefault="True">
+                <Expose ExposedAttribute="Name" Name="OOSBind"/>
+            </Bind>
+            <Bind Description="AlarmBind" Name="SaTmpFal" PreventDefault="True"/>
+            <Bind Description="AlarmBind" Name="SaTmpHal" PreventDefault="True"/>
+            <Bind Description="AlarmBind" Name="SaTmpLal" PreventDefault="True"/>
+        </Group>
+        <Group Name="display">
+            <Rectangle AlarmColor="#F0080E" Ctrl="BgdCtrl" Fill="None"
+                ForcedColor="#FFD100" Height="20.0" Left="0.0"
+                Model="Background" Name="rctBackground" RadiusX="5"
+                RadiusY="5" Stroke="#626469" StrokeDashArray="0.0"
+                StrokeWidth="1.0" Top="20" Width="100.0">
+                <LinearGradient EndPoint="0,1">
+                    <GradientStop Color="#FEFEFE" Offset="0"/>
+                    <GradientStop Color="#DFE0E2" Offset="1.0"/>
+                </LinearGradient>
+            </Rectangle>
+            <TextBox Fill="None" FontFamily="Arial" FontSize="15.0"
+                FontStyle="Normal" FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Name="txtTitle"
+                Stroke="#000000" TextDecoration="None" Top="0.0"
+                Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[Supply Temp]]><Expose
+                    ExposedAttribute="Content" Name="Text Content"/>
+            </TextBox>
+            <TextBox Ctrl="ValueCtrl" Decimals="1" Fill="None"
+                FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+                FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Model="ValueBind"
+                Name="txtValue" Prefix="" ShowUnits="false"
+                Stroke="#000000" Suffix="" TextDecoration="None"
+                Top="20.0" Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[---]]><Expose
+                    ExposedAttribute="Content" Name="Point Content"/>
+                <Expose ExposedAttribute="Prefix" Name="Prefix"/>
+                <Expose ExposedAttribute="Suffix" Name="Suffix"/>
+                <Expose ExposedAttribute="Decimals" Name="Decimals"/>
+                <Expose ExposedAttribute="ShowUnits" Name="ShowUnits"/>
+            </TextBox>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="ForceCtrl" Height="20.0" Left="0"
+                Model="ForceBind" Name="cmpForced" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
+                    RadiusY="5" Stroke="None" Width="20">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="ForcedColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
+                </Rectangle>
+                <Component Clip="False" ContentHeight="10.1"
+                    ContentWidth="15.0" Height="10.1" Left="4" Top="5" Width="15.0">
+                    <Path Fill="#E3BC67" Name="B1"
+                        PathData="M11.25,10.096130000000017 C12.980770399999997,10.096130000000017 12.6923101,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849399999999,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576710000000276 12.403849399999999,6.0576710000000276 12.980770399999997,6.0576710000000276 12.980770399999997,6.0576710000000276 13.557690399999999,6.0576710000000276 15.0,6.0576710000000276 15.0,4.0384409999999775 13.557690399999999,4.0384409999999775 12.980770399999997,4.0384409999999775 12.6923101,4.0384409999999775 12.115386999999998,4.0384409999999775 13.557690399999999,4.0384409999999775 13.557690399999999,2.0192109999999843 12.115386999999998,2.0192109999999843 9.51923,2.0192109999999843 9.51923,2.0192109999999843 7.2115399999999994,2.0192109999999843 8.6538473000000025,2.0192109999999843 8.6538473000000025,-1.900000000887303E-5 7.2115399999999994,-1.900000000887303E-5 5.76923,-1.900000000887303E-5 4.6153800000000018,-1.900000000887303E-5 3.4615399999999994,0.28844099999997752 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040600999999981 1.1538473000000025,1.7307500000000005 0.725049300000002,2.0655100000000175 0.20812709999999868,2.382092 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.5192109999999843 0.33908739999999682,10.067859999999996 1.1538473000000025,10.096130000000017 1.7307703999999973,10.096130000000017 4.9038473000000025,10.096130000000017 8.6538473000000025,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192109999999843 L5.4807703999999973,2.0192109999999843 M12.115386999999998,4.0384409999999775 L8.3653800000000018,4.0384409999999775 M12.403849399999999,6.0576710000000276 L8.3653800000000018,6.0576710000000276 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                    <Path Fill="#FFFFFF"
+                        PathData="M11.25,10.096130000000017 C12.9807706,10.096130000000017 12.692310200000001,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849600000001,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576730000000225 12.403849600000001,6.0576730000000225 12.9807706,6.0576730000000225 12.9807706,6.0576730000000225 13.5576906,6.0576730000000225 15.0,6.0576730000000225 15.0,4.0384429999999725 13.5576906,4.0384429999999725 12.9807706,4.0384429999999725 12.692310200000001,4.0384429999999725 12.115388000000003,4.0384429999999725 13.5576906,4.0384429999999725 13.5576906,2.0192129999999793 12.115388000000003,2.0192129999999793 9.51923,2.0192129999999793 9.51923,2.0192129999999793 7.2115399999999994,2.0192129999999793 8.6538474999999977,2.0192129999999793 8.6538474999999977,-1.7000000013922545E-5 7.2115399999999994,-1.7000000013922545E-5 5.76923,-1.7000000013922545E-5 4.6153800000000018,-1.7000000013922545E-5 3.4615399999999994,0.28844299999997247 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040602999999976 1.1538474999999977,1.7307500000000005 0.72504949999999724,2.0655100000000175 0.20812730000000101,2.382093999999995 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.51921299999998 0.33908759999999916,10.067859999999996 1.1538474999999977,10.096130000000017 1.7307705999999996,10.096130000000017 4.9038474999999977,10.096130000000017 8.6538474999999977,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192129999999793 L5.4807706,2.0192129999999793 M12.115388000000003,4.0384429999999725 L8.3653800000000018,4.0384429999999725 M12.403849600000001,6.0576730000000225 L8.3653800000000018,6.0576730000000225 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5">
+                        <LinearGradient Attribute="Fill"
+                            EndPoint="1.0,0.0" SpreadMethod="Pad" StartPoint="0.0,0.0">
+                            <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                            <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                            <GradientStop Color="#60000000" Offset="1.0"/>
+                        </LinearGradient>
+                    </Path>
+                </Component>
+            </Component>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="AlarmCtrl" Height="20.0" Left="80"
+                Model="AlarmBind" Name="cmpAlarm" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#F0080E" Height="20.0" Left="0"
+                    RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="AlarmColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
+                </Rectangle>
+                <Path Fill="#FFD100" Name="B1"
+                    PathData="M11.8,15.15 C11.8,15.5640001 10.994,15.9 10.0,15.9 9.006,15.9 8.20000001,15.5640001 8.20000001,15.15 8.20000001,14.736 9.006,14.4 10.0,14.4 10.994,14.4 11.8,14.736 11.8,15.15 z M11.0,3.75 C11.0,4.164 10.55200001,4.5 10.0,4.5 9.448,4.5 9.0,4.164 9.0,3.75 9.0,3.336000001 9.448,3.0 10.0,3.0 10.55200001,3.0 11.0,3.336000001 11.0,3.75 z"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="8.199998259544" Opacity="1.0"
+                    Stroke="#4B000000" StrokeDashArray="0.0"
+                    StrokeWidth=".5" Top="14.399997115135" Width="3.60000014305115"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="9.0" Opacity="1.0" Stroke="#4B000000"
+                    StrokeDashArray="0.0" StrokeWidth=".5" Top="3.0" Width="2.0"/>
+                <Curve Fill="#FFD100" Name="B2" Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Curve Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#5F000000" StrokeDashArray="0.0" StrokeWidth=".5">
+                    <LinearGradient Attribute="Fill" EndPoint="1.0,0.0"
+                        SpreadMethod="Pad" StartPoint="0.0,0.0">
+                        <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                        <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#60000000" Offset="1.0"/>
+                    </LinearGradient>
+                </Curve>
+            </Component>
+        </Group>
+        <TargetArea Height="40" Left="0" Top="0" Width="100"/>
+        <Script OnDocumentLoad="load" OnMouseClick="" OnMouseDown=""
+            OnMouseMove="" OnMouseOut="" OnMouseOver="" OnMouseUp="" OnSignalChange="change"><![CDATA[/**==========================================================================================
+ * Main Object
+ */
+var Main = {
+	load: function(e) {
+		var comp = e.getCurrentTarget(),
+			displayChildren = comp.getChild("display").getChildNodes();
+		
+		this.widgets = {};
+		for(var i = 0, max = displayChildren.length; i < max; i += 1) {
+			var child = displayChildren.item(i);
+			if(child.hasAttribute("Model")) {
+				var model = String(child.getAttribute("Model")),
+					ctrl = String(child.getAttribute("Ctrl"));
+				this.widgets[model] = Object.create(eval(ctrl));
+				this.widgets[model].init(child);
+			}
+		}				
+	},
+	
+	change: function(e) {
+		e.preventDefault();
+		var dscr = String(e.getTarget().getAttribute("Description"));
+		if(this.widgets.hasOwnProperty(dscr)) {
+			this.widgets[dscr].update(e);
+		}
+		
+		this.widgets["Background"].update(e);
+	}
+};
+
+/**==========================================================================================
+ * Event Callback Functions
+ */
+
+function load(evt){	
+	Main.load(evt);
+}
+
+function change(evt) {	
+	Main.change(evt);
+}
+
+function click(evt) {
+	Main.click(evt);
+}
+
+/**==========================================================================================
+ * Helper Functions
+ */
+if (!Object.create) {
+	Object.create = function(base) {
+		function F () {};
+		F.prototype = base;
+		return new F();
+	};
+}
+
+var isUndefined = function(o) {
+	if(typeof(o) === "undefined") {
+		return true;			
+	}
+	return false;	
+};
+
+var getBool = function(s) {
+	var trueEnum = ["yes", "y", "Yes", "Y", "1", "True", "true", "T", "t", "On", "active"];
+	var i = trueEnum.length;
+	while(i--) {
+		if(String(s) === trueEnum[i]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/**==========================================================================================
+ * Value Ctrl
+ */
+ var ValueCtrl = {
+ 	init: function(node) { 		
+ 		var type = "Text";
+ 		if(node.hasAttribute("Type")) {
+ 			type = String(node.getAttribute("Type"));
+ 		}
+ 		
+ 		switch(type) {
+		case "Analog":
+			this.txt = Object.create(AnalogCtrl);
+			break;
+		case "Digital":
+			this.txt = Object.create(DigitalCtrl);
+			break;
+		case "Multi":
+			this.txt = Object.create(MultiCtrl);
+			break;
+		case "Enum":
+			this.txt = Object.create(EnumCtrl);
+			break;
+		default:
+			this.txt = Object.create(TextCtrl);
+			break;				
+		}
+		
+		this.txt.init(node);
+ 	},
+ 	update: function(e) {
+ 		this.txt.update(e);
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Force Ctrl
+ */
+ var ForceCtrl = {
+ 	init: function(node) {
+ 		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name")),
+ 			lastName = String(name.split(".").splice(-1)).replace(/\d/g,''),
+ 			value = e.getValue();
+ 			status = false;
+ 		 
+		switch(lastName) {
+		case "OutOfService":
+			status = getBool(value);		
+			break;
+		case "Priority":
+			status = value !== null;
+			break;
+		case "ActiveCommandPriority":
+			if(value !== null && value < 10) {
+				status = true;
+			}
+			break;
+		default:
+		}
+
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);	
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Alarm Ctrl
+ */
+var AlarmCtrl = {
+	init: function(node) {
+		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 		
+ 		this.values = {};
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name"));
+ 		this.values[name] = +e.getValue();
+ 		
+ 		var status = false;
+ 		
+ 		for(var key in this.values) {
+ 			if(this.values[key] !== 0) {
+ 				status = true;
+ 			}
+ 		}
+ 		
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);
+ 	}
+};
+
+/**==========================================================================================
+ * Analog Control
+ */
+var AnalogCtrl = {
+	init: function(node) {
+		this.decimals = 0;
+		this.units = "";
+		this.prefix = "";
+		this.suffix = "";
+		this.showUnits = true;
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+		
+		if(node.hasAttribute("Decimals")) {		
+			this.decimals = +node.getAttribute("Decimals");
+		}
+					
+		if(node.hasAttribute("Prefix")) {		
+			this.prefix = String(node.getAttribute("Prefix"));
+		}
+		
+		if(node.hasAttribute("Suffix")) {		
+			this.suffix = String(node.getAttribute("Suffix"));
+		}
+		
+		if(node.hasAttribute("ShowUnits")) {		
+			this.showUnits = String(node.getAttribute("ShowUnits"));
+		}
+	},
+	update: function(e) {
+		var value = +e.getValue(),
+			units = String(e.getUnit());
+
+		this.txt.setContent(this.prefix + value.toFixed(this.decimals) + this.suffix + (this.showUnits ? " " + units : ""));
+	}
+};
+
+/**==========================================================================================
+ * Digital Control
+ */
+var DigitalCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 2;
+		while(i--) {
+			this.states[i] = String(node.getAttribute("State" + i));
+		}		
+	},
+	update: function(e) {	
+		var content = getBool(e.getValue()) ? this.states[1] : this.states[0];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Multi Control
+ */
+var MultiCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 1;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Enum Control
+ */
+var EnumCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 0;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Text Control
+ */
+var TextCtrl = {
+	init: function(node) {
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);		
+	},
+	update: function(e) {
+		this.txt.setContent(String(e.getValue()));
+	}
+};
+
+/**==========================================================================================
+ * Background Control
+ */
+ 
+var BgdCtrl = {
+	init: function(node) {
+		if(node) {
+			if(node.hasAttribute("Stroke")) {
+				this.normalColor = node.getAttribute("Stroke");
+			}
+			this.forcedColor = "#FFFF00";
+			if(node.hasAttribute("ForcedColor")) {
+				this.forcedColor = node.getAttribute("ForcedColor");
+			}
+			this.alarmColor = "#FF0000";
+			if(node.hasAttribute("AlarmColor")) {
+				this.alarmColor = node.getAttribute("AlarmColor");
+			}
+		
+			this.rct = Object.create(Rectangle);
+			this.rct.init(node);
+			
+			this.values = {};
+		}
+	},
+	update: function(e) {
+		var name = String(e.getTarget().getAttribute("Name")),
+			description = String(e.getTarget().getAttribute("Description"));
+		
+		if(!this.values.hasOwnProperty(name)) {
+			this.values[name] = {value: e.getValue(), dscr: description};
+		}
+		
+		this.values[name].value = e.getValue();
+		
+		var alarmStatus = false,
+			forceStatus = false;
+		for(var key in this.values) {
+			var val = this.values[key];
+			if(val.dscr === "ForceBind") {
+				var lastName = String(String(key).split(".").splice(-1)).replace(/\d/g,'');
+ 		 		
+				switch(lastName) {
+				case "OutOfService":
+					forceStatus = getBool(val.value);		
+					break;
+				case "Priority":
+					forceStatus = val.value !== null;
+					break;
+				case "ActiveCommandPriority":
+					if(val.value !== null && val.value < 10) {
+						forceStatus = true;
+					}
+					break;
+				default:
+				}
+			} else if(val.dscr === "AlarmBind") {
+				var alarmVal = +val.value;
+				if(alarmVal !== 0) {
+					alarmStatus = true;
+				}
+			}
+		}		
+		var stroke = this.normalColor,
+			strokeWidth = 1;
+
+		if(forceStatus) {
+			stroke = this.forcedColor;
+			strokeWidth = 2;
+		}
+		if(alarmStatus) {
+			stroke = this.alarmColor;
+			strokeWidth = 2;
+		}
+		this.rct.setStroke(stroke);
+		this.rct.setStrokeWidth(strokeWidth);
+	}
+}
+
+/**==========================================================================================
+ * Bind Object
+ */
+var Bind = {
+	init: function(node) {
+		this.node = node;
+		if(this.node) {
+			this.fbn = this.node.getFullBindName();
+		}
+	},
+	enableUpdates: function(){
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Enable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	disableUpdates: function() {
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Disable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	displayProperties: function() {
+		if(this.fbn) {
+			invoke(this.fbn,"EditProperties");
+		}
+	},
+	relinquish: function() {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn,null);	
+			}
+		}
+		catch(err) {
+		}
+	},
+	write: function(val) {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn, val);
+			}
+		}
+		catch(err) {
+		}
+	}
+};
+
+/**==========================================================================================
+ * Animate Object
+ */
+var Animate = {
+	init: function(node) {
+		this.node = node;
+	},
+	setAnimation: function(b) {
+		this.node.setAttribute("Animation", b ? "Start": "Stop");
+	}
+}
+
+/**==========================================================================================
+ * Rectangle Object
+ */
+var Rectangle = {
+	init: function(node) {
+		this.node = node;
+	},
+	setFill: function(s) {
+		this.node.setAttribute("Fill", s);
+	},
+	setStroke: function(s) {
+		this.node.setAttribute("Stroke", s);
+	},
+	setStrokeWidth: function(s) {
+		this.node.setAttribute("StrokeWidth", s);
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+}
+
+/**==========================================================================================
+ * TextBox Object
+ */
+var TextBox = {
+	init: function(node) {
+		this.node = node;
+	},
+	setContent: function(s) {
+		this.node.setAttribute("Content", s);
+	}
+};
+
+/**==========================================================================================
+ * Component Object
+ */
+var Component = {
+	init: function(node) {
+		this.node = node;
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+};]]></Script>
+    </Component>
+    <TextBox FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+        FontWeight="Normal" Height="20.0" HorizontalAlign="Left"
+        Left="105.0" Opacity="1.0" Stroke="#000000"
+        TextDecoration="None" Top="40.0" VerticalAlign="Top" Width="90.0"><![CDATA[Analog Input]]></TextBox>
+    <TextBox FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+        FontWeight="Normal" Height="20.0" HorizontalAlign="Left"
+        Left="100.0" Opacity="1.0" Stroke="#000000"
+        TextDecoration="None" Top="145.0" VerticalAlign="Top" Width="100.0"><![CDATA[Analog Output]]></TextBox>
+    <Component Clip="False" ContentHeight="40.0" ContentWidth="100.0"
+        Height="40.0" Id="SaFanSpd" Left="100.0" Name="" Top="165.0" Width="100.0">
+        <Group Name="binds">
+            <Bind Description="ValueBind" Name="SaFanSpd">
+                <Expose ExposedAttribute="Name" Name="ValueBind"/>
+            </Bind>
+            <Bind Description="ForceBind" DynamicUpdates="Enable"
+                Name="SaFanSpd.ActiveCommandPriority" PreventDefault="True">
+                <Expose ExposedAttribute="Name" Name="OOSBind"/>
+            </Bind>
+        </Group>
+        <Group Name="display">
+            <Rectangle AlarmColor="#F0080E" Ctrl="BgdCtrl" Fill="None"
+                ForcedColor="#FFD100" Height="20.0" Left="0.0"
+                Model="Background" Name="rctBackground" RadiusX="5"
+                RadiusY="5" Stroke="#626469" StrokeDashArray="0.0"
+                StrokeWidth="1.0" Top="20" Width="100.0">
+                <LinearGradient EndPoint="0,1">
+                    <GradientStop Color="#FEFEFE" Offset="0"/>
+                    <GradientStop Color="#DFE0E2" Offset="1.0"/>
+                </LinearGradient>
+            </Rectangle>
+            <TextBox Fill="None" FontFamily="Arial" FontSize="15.0"
+                FontStyle="Normal" FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Name="txtTitle"
+                Stroke="#000000" TextDecoration="None" Top="0.0"
+                Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[Fan Speed]]><Expose
+                    ExposedAttribute="Content" Name="Text Content"/>
+            </TextBox>
+            <TextBox Ctrl="ValueCtrl" Decimals="0" Fill="None"
+                FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+                FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Model="ValueBind"
+                Name="txtValue" Prefix="" ShowUnits="false"
+                Stroke="#000000" Suffix="" TextDecoration="None"
+                Top="20.0" Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[---]]><Expose
+                    ExposedAttribute="Content" Name="Point Content"/>
+                <Expose ExposedAttribute="Prefix" Name="Prefix"/>
+                <Expose ExposedAttribute="Suffix" Name="Suffix"/>
+                <Expose ExposedAttribute="Decimals" Name="Decimals"/>
+                <Expose ExposedAttribute="ShowUnits" Name="ShowUnits"/>
+            </TextBox>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="ForceCtrl" Height="20.0" Left="0"
+                Model="ForceBind" Name="cmpForced" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
+                    RadiusY="5" Stroke="None" Width="20">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="ForcedColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
+                </Rectangle>
+                <Component Clip="False" ContentHeight="10.1"
+                    ContentWidth="15.0" Height="10.1" Left="4" Top="5" Width="15.0">
+                    <Path Fill="#E3BC67" Name="B1"
+                        PathData="M11.25,10.096130000000017 C12.980770399999997,10.096130000000017 12.6923101,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849399999999,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576710000000276 12.403849399999999,6.0576710000000276 12.980770399999997,6.0576710000000276 12.980770399999997,6.0576710000000276 13.557690399999999,6.0576710000000276 15.0,6.0576710000000276 15.0,4.0384409999999775 13.557690399999999,4.0384409999999775 12.980770399999997,4.0384409999999775 12.6923101,4.0384409999999775 12.115386999999998,4.0384409999999775 13.557690399999999,4.0384409999999775 13.557690399999999,2.0192109999999843 12.115386999999998,2.0192109999999843 9.51923,2.0192109999999843 9.51923,2.0192109999999843 7.2115399999999994,2.0192109999999843 8.6538473000000025,2.0192109999999843 8.6538473000000025,-1.900000000887303E-5 7.2115399999999994,-1.900000000887303E-5 5.76923,-1.900000000887303E-5 4.6153800000000018,-1.900000000887303E-5 3.4615399999999994,0.28844099999997752 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040600999999981 1.1538473000000025,1.7307500000000005 0.725049300000002,2.0655100000000175 0.20812709999999868,2.382092 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.5192109999999843 0.33908739999999682,10.067859999999996 1.1538473000000025,10.096130000000017 1.7307703999999973,10.096130000000017 4.9038473000000025,10.096130000000017 8.6538473000000025,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192109999999843 L5.4807703999999973,2.0192109999999843 M12.115386999999998,4.0384409999999775 L8.3653800000000018,4.0384409999999775 M12.403849399999999,6.0576710000000276 L8.3653800000000018,6.0576710000000276 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                    <Path Fill="#FFFFFF"
+                        PathData="M11.25,10.096130000000017 C12.9807706,10.096130000000017 12.692310200000001,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849600000001,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576730000000225 12.403849600000001,6.0576730000000225 12.9807706,6.0576730000000225 12.9807706,6.0576730000000225 13.5576906,6.0576730000000225 15.0,6.0576730000000225 15.0,4.0384429999999725 13.5576906,4.0384429999999725 12.9807706,4.0384429999999725 12.692310200000001,4.0384429999999725 12.115388000000003,4.0384429999999725 13.5576906,4.0384429999999725 13.5576906,2.0192129999999793 12.115388000000003,2.0192129999999793 9.51923,2.0192129999999793 9.51923,2.0192129999999793 7.2115399999999994,2.0192129999999793 8.6538474999999977,2.0192129999999793 8.6538474999999977,-1.7000000013922545E-5 7.2115399999999994,-1.7000000013922545E-5 5.76923,-1.7000000013922545E-5 4.6153800000000018,-1.7000000013922545E-5 3.4615399999999994,0.28844299999997247 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040602999999976 1.1538474999999977,1.7307500000000005 0.72504949999999724,2.0655100000000175 0.20812730000000101,2.382093999999995 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.51921299999998 0.33908759999999916,10.067859999999996 1.1538474999999977,10.096130000000017 1.7307705999999996,10.096130000000017 4.9038474999999977,10.096130000000017 8.6538474999999977,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192129999999793 L5.4807706,2.0192129999999793 M12.115388000000003,4.0384429999999725 L8.3653800000000018,4.0384429999999725 M12.403849600000001,6.0576730000000225 L8.3653800000000018,6.0576730000000225 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5">
+                        <LinearGradient Attribute="Fill"
+                            EndPoint="1.0,0.0" SpreadMethod="Pad" StartPoint="0.0,0.0">
+                            <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                            <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                            <GradientStop Color="#60000000" Offset="1.0"/>
+                        </LinearGradient>
+                    </Path>
+                </Component>
+            </Component>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="AlarmCtrl" Height="20.0" Left="80"
+                Model="AlarmBind" Name="cmpAlarm" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#F0080E" Height="20.0" Left="0"
+                    RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="AlarmColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
+                </Rectangle>
+                <Path Fill="#FFD100" Name="B1"
+                    PathData="M11.8,15.15 C11.8,15.5640001 10.994,15.9 10.0,15.9 9.006,15.9 8.20000001,15.5640001 8.20000001,15.15 8.20000001,14.736 9.006,14.4 10.0,14.4 10.994,14.4 11.8,14.736 11.8,15.15 z M11.0,3.75 C11.0,4.164 10.55200001,4.5 10.0,4.5 9.448,4.5 9.0,4.164 9.0,3.75 9.0,3.336000001 9.448,3.0 10.0,3.0 10.55200001,3.0 11.0,3.336000001 11.0,3.75 z"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="8.199998259544" Opacity="1.0"
+                    Stroke="#4B000000" StrokeDashArray="0.0"
+                    StrokeWidth=".5" Top="14.399997115135" Width="3.60000014305115"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="9.0" Opacity="1.0" Stroke="#4B000000"
+                    StrokeDashArray="0.0" StrokeWidth=".5" Top="3.0" Width="2.0"/>
+                <Curve Fill="#FFD100" Name="B2" Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Curve Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#5F000000" StrokeDashArray="0.0" StrokeWidth=".5">
+                    <LinearGradient Attribute="Fill" EndPoint="1.0,0.0"
+                        SpreadMethod="Pad" StartPoint="0.0,0.0">
+                        <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                        <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#60000000" Offset="1.0"/>
+                    </LinearGradient>
+                </Curve>
+            </Component>
+        </Group>
+        <TargetArea Height="40" Left="0" Top="0" Width="100"/>
+        <Script OnDocumentLoad="load" OnMouseClick="" OnMouseDown=""
+            OnMouseMove="" OnMouseOut="" OnMouseOver="" OnMouseUp="" OnSignalChange="change"><![CDATA[/**==========================================================================================
+ * Main Object
+ */
+var Main = {
+	load: function(e) {
+		var comp = e.getCurrentTarget(),
+			displayChildren = comp.getChild("display").getChildNodes();
+		
+		this.widgets = {};
+		for(var i = 0, max = displayChildren.length; i < max; i += 1) {
+			var child = displayChildren.item(i);
+			if(child.hasAttribute("Model")) {
+				var model = String(child.getAttribute("Model")),
+					ctrl = String(child.getAttribute("Ctrl"));
+				this.widgets[model] = Object.create(eval(ctrl));
+				this.widgets[model].init(child);
+			}
+		}				
+	},
+	
+	change: function(e) {
+		e.preventDefault();
+		var dscr = String(e.getTarget().getAttribute("Description"));
+		if(this.widgets.hasOwnProperty(dscr)) {
+			this.widgets[dscr].update(e);
+		}
+		
+		this.widgets["Background"].update(e);
+	}
+};
+
+/**==========================================================================================
+ * Event Callback Functions
+ */
+
+function load(evt){	
+	Main.load(evt);
+}
+
+function change(evt) {	
+	Main.change(evt);
+}
+
+function click(evt) {
+	Main.click(evt);
+}
+
+/**==========================================================================================
+ * Helper Functions
+ */
+if (!Object.create) {
+	Object.create = function(base) {
+		function F () {};
+		F.prototype = base;
+		return new F();
+	};
+}
+
+var isUndefined = function(o) {
+	if(typeof(o) === "undefined") {
+		return true;			
+	}
+	return false;	
+};
+
+var getBool = function(s) {
+	var trueEnum = ["yes", "y", "Yes", "Y", "1", "True", "true", "T", "t", "On", "active"];
+	var i = trueEnum.length;
+	while(i--) {
+		if(String(s) === trueEnum[i]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/**==========================================================================================
+ * Value Ctrl
+ */
+ var ValueCtrl = {
+ 	init: function(node) { 		
+ 		var type = "Text";
+ 		if(node.hasAttribute("Type")) {
+ 			type = String(node.getAttribute("Type"));
+ 		}
+ 		
+ 		switch(type) {
+		case "Analog":
+			this.txt = Object.create(AnalogCtrl);
+			break;
+		case "Digital":
+			this.txt = Object.create(DigitalCtrl);
+			break;
+		case "Multi":
+			this.txt = Object.create(MultiCtrl);
+			break;
+		case "Enum":
+			this.txt = Object.create(EnumCtrl);
+			break;
+		default:
+			this.txt = Object.create(TextCtrl);
+			break;				
+		}
+		
+		this.txt.init(node);
+ 	},
+ 	update: function(e) {
+ 		this.txt.update(e);
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Force Ctrl
+ */
+ var ForceCtrl = {
+ 	init: function(node) {
+ 		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name")),
+ 			lastName = String(name.split(".").splice(-1)).replace(/\d/g,''),
+ 			value = e.getValue();
+ 			status = false;
+ 		 
+		switch(lastName) {
+		case "OutOfService":
+			status = getBool(value);		
+			break;
+		case "Priority":
+			status = value !== null;
+			break;
+		case "ActiveCommandPriority":
+			if(value !== null && value < 10) {
+				status = true;
+			}
+			break;
+		default:
+		}
+
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);	
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Alarm Ctrl
+ */
+var AlarmCtrl = {
+	init: function(node) {
+		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 		
+ 		this.values = {};
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name"));
+ 		this.values[name] = +e.getValue();
+ 		
+ 		var status = false;
+ 		
+ 		for(var key in this.values) {
+ 			if(this.values[key] !== 0) {
+ 				status = true;
+ 			}
+ 		}
+ 		
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);
+ 	}
+};
+
+/**==========================================================================================
+ * Analog Control
+ */
+var AnalogCtrl = {
+	init: function(node) {
+		this.decimals = 0;
+		this.units = "";
+		this.prefix = "";
+		this.suffix = "";
+		this.showUnits = true;
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+		
+		if(node.hasAttribute("Decimals")) {		
+			this.decimals = +node.getAttribute("Decimals");
+		}
+					
+		if(node.hasAttribute("Prefix")) {		
+			this.prefix = String(node.getAttribute("Prefix"));
+		}
+		
+		if(node.hasAttribute("Suffix")) {		
+			this.suffix = String(node.getAttribute("Suffix"));
+		}
+		
+		if(node.hasAttribute("ShowUnits")) {		
+			this.showUnits = String(node.getAttribute("ShowUnits"));
+		}
+	},
+	update: function(e) {
+		var value = +e.getValue(),
+			units = String(e.getUnit());
+
+		this.txt.setContent(this.prefix + value.toFixed(this.decimals) + this.suffix + (this.showUnits ? " " + units : ""));
+	}
+};
+
+/**==========================================================================================
+ * Digital Control
+ */
+var DigitalCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 2;
+		while(i--) {
+			this.states[i] = String(node.getAttribute("State" + i));
+		}		
+	},
+	update: function(e) {	
+		var content = getBool(e.getValue()) ? this.states[1] : this.states[0];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Multi Control
+ */
+var MultiCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 1;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Enum Control
+ */
+var EnumCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 0;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Text Control
+ */
+var TextCtrl = {
+	init: function(node) {
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);		
+	},
+	update: function(e) {
+		this.txt.setContent(String(e.getValue()));
+	}
+};
+
+/**==========================================================================================
+ * Background Control
+ */
+ 
+var BgdCtrl = {
+	init: function(node) {
+		if(node) {
+			if(node.hasAttribute("Stroke")) {
+				this.normalColor = node.getAttribute("Stroke");
+			}
+			this.forcedColor = "#FFFF00";
+			if(node.hasAttribute("ForcedColor")) {
+				this.forcedColor = node.getAttribute("ForcedColor");
+			}
+			this.alarmColor = "#FF0000";
+			if(node.hasAttribute("AlarmColor")) {
+				this.alarmColor = node.getAttribute("AlarmColor");
+			}
+		
+			this.rct = Object.create(Rectangle);
+			this.rct.init(node);
+			
+			this.values = {};
+		}
+	},
+	update: function(e) {
+		var name = String(e.getTarget().getAttribute("Name")),
+			description = String(e.getTarget().getAttribute("Description"));
+		
+		if(!this.values.hasOwnProperty(name)) {
+			this.values[name] = {value: e.getValue(), dscr: description};
+		}
+		
+		this.values[name].value = e.getValue();
+		
+		var alarmStatus = false,
+			forceStatus = false;
+		for(var key in this.values) {
+			var val = this.values[key];
+			if(val.dscr === "ForceBind") {
+				var lastName = String(String(key).split(".").splice(-1)).replace(/\d/g,'');
+ 		 		
+				switch(lastName) {
+				case "OutOfService":
+					forceStatus = getBool(val.value);		
+					break;
+				case "Priority":
+					forceStatus = val.value !== null;
+					break;
+				case "ActiveCommandPriority":
+					if(val.value !== null && val.value < 10) {
+						forceStatus = true;
+					}
+					break;
+				default:
+				}
+			} else if(val.dscr === "AlarmBind") {
+				var alarmVal = +val.value;
+				if(alarmVal !== 0) {
+					alarmStatus = true;
+				}
+			}
+		}		
+		var stroke = this.normalColor,
+			strokeWidth = 1;
+
+		if(forceStatus) {
+			stroke = this.forcedColor;
+			strokeWidth = 2;
+		}
+		if(alarmStatus) {
+			stroke = this.alarmColor;
+			strokeWidth = 2;
+		}
+		this.rct.setStroke(stroke);
+		this.rct.setStrokeWidth(strokeWidth);
+	}
+}
+
+/**==========================================================================================
+ * Bind Object
+ */
+var Bind = {
+	init: function(node) {
+		this.node = node;
+		if(this.node) {
+			this.fbn = this.node.getFullBindName();
+		}
+	},
+	enableUpdates: function(){
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Enable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	disableUpdates: function() {
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Disable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	displayProperties: function() {
+		if(this.fbn) {
+			invoke(this.fbn,"EditProperties");
+		}
+	},
+	relinquish: function() {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn,null);	
+			}
+		}
+		catch(err) {
+		}
+	},
+	write: function(val) {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn, val);
+			}
+		}
+		catch(err) {
+		}
+	}
+};
+
+/**==========================================================================================
+ * Animate Object
+ */
+var Animate = {
+	init: function(node) {
+		this.node = node;
+	},
+	setAnimation: function(b) {
+		this.node.setAttribute("Animation", b ? "Start": "Stop");
+	}
+}
+
+/**==========================================================================================
+ * Rectangle Object
+ */
+var Rectangle = {
+	init: function(node) {
+		this.node = node;
+	},
+	setFill: function(s) {
+		this.node.setAttribute("Fill", s);
+	},
+	setStroke: function(s) {
+		this.node.setAttribute("Stroke", s);
+	},
+	setStrokeWidth: function(s) {
+		this.node.setAttribute("StrokeWidth", s);
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+}
+
+/**==========================================================================================
+ * TextBox Object
+ */
+var TextBox = {
+	init: function(node) {
+		this.node = node;
+	},
+	setContent: function(s) {
+		this.node.setAttribute("Content", s);
+	}
+};
+
+/**==========================================================================================
+ * Component Object
+ */
+var Component = {
+	init: function(node) {
+		this.node = node;
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+};]]></Script>
+    </Component>
+    <Component Clip="False" ContentHeight="40.0" ContentWidth="100.0"
+        Height="40.0" Id="SaFanSts" Left="265.0" Name="" Top="65.0" Width="100.0">
+        <Group Name="binds">
+            <Bind Description="ValueBind" Name="SaFanSts">
+                <Expose ExposedAttribute="Name" Name="ValueBind"/>
+            </Bind>
+            <Bind Description="ForceBind" DynamicUpdates="Enable"
+                Name="SaFanSts.OutOfService" PreventDefault="True">
+                <Expose ExposedAttribute="Name" Name="OOSBind"/>
+            </Bind>
+            <Bind Description="AlarmBind" Name="SaFanAlm" PreventDefault="True"/>
+        </Group>
+        <Group Name="display">
+            <Rectangle AlarmColor="#F0080E" Ctrl="BgdCtrl" Fill="None"
+                ForcedColor="#FFD100" Height="20.0" Left="0.0"
+                Model="Background" Name="rctBackground" RadiusX="5"
+                RadiusY="5" Stroke="#626469" StrokeDashArray="0.0"
+                StrokeWidth="1.0" Top="20" Width="100.0">
+                <LinearGradient EndPoint="0,1">
+                    <GradientStop Color="#FEFEFE" Offset="0"/>
+                    <GradientStop Color="#DFE0E2" Offset="1.0"/>
+                </LinearGradient>
+            </Rectangle>
+            <TextBox Fill="None" FontFamily="Arial" FontSize="15.0"
+                FontStyle="Normal" FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Name="txtTitle"
+                Stroke="#000000" TextDecoration="None" Top="0.0"
+                Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[Fan Status]]><Expose
+                    ExposedAttribute="Content" Name="Text Content"/>
+            </TextBox>
+            <TextBox Ctrl="ValueCtrl" Fill="None" FontFamily="Arial"
+                FontSize="15.0" FontStyle="Normal" FontWeight="Normal"
+                Height="20.0" HorizontalAlign="Center" Left="0.0"
+                Model="ValueBind" Name="txtValue" State0="Off"
+                State1="On" Stroke="#000000" TextDecoration="None"
+                Top="20.0" Type="Digital" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[---]]><Expose
+                    ExposedAttribute="Content" Name="Point Content"/>
+                <Expose ExposedAttribute="State0" Name="State0"/>
+                <Expose ExposedAttribute="State1" Name="State1"/>
+            </TextBox>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="ForceCtrl" Height="20.0" Left="0"
+                Model="ForceBind" Name="cmpForced" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
+                    RadiusY="5" Stroke="None" Width="20">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="ForcedColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
+                </Rectangle>
+                <Component Clip="False" ContentHeight="10.1"
+                    ContentWidth="15.0" Height="10.1" Left="4" Top="5" Width="15.0">
+                    <Path Fill="#E3BC67" Name="B1"
+                        PathData="M11.25,10.096130000000017 C12.980770399999997,10.096130000000017 12.6923101,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849399999999,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576710000000276 12.403849399999999,6.0576710000000276 12.980770399999997,6.0576710000000276 12.980770399999997,6.0576710000000276 13.557690399999999,6.0576710000000276 15.0,6.0576710000000276 15.0,4.0384409999999775 13.557690399999999,4.0384409999999775 12.980770399999997,4.0384409999999775 12.6923101,4.0384409999999775 12.115386999999998,4.0384409999999775 13.557690399999999,4.0384409999999775 13.557690399999999,2.0192109999999843 12.115386999999998,2.0192109999999843 9.51923,2.0192109999999843 9.51923,2.0192109999999843 7.2115399999999994,2.0192109999999843 8.6538473000000025,2.0192109999999843 8.6538473000000025,-1.900000000887303E-5 7.2115399999999994,-1.900000000887303E-5 5.76923,-1.900000000887303E-5 4.6153800000000018,-1.900000000887303E-5 3.4615399999999994,0.28844099999997752 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040600999999981 1.1538473000000025,1.7307500000000005 0.725049300000002,2.0655100000000175 0.20812709999999868,2.382092 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.5192109999999843 0.33908739999999682,10.067859999999996 1.1538473000000025,10.096130000000017 1.7307703999999973,10.096130000000017 4.9038473000000025,10.096130000000017 8.6538473000000025,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192109999999843 L5.4807703999999973,2.0192109999999843 M12.115386999999998,4.0384409999999775 L8.3653800000000018,4.0384409999999775 M12.403849399999999,6.0576710000000276 L8.3653800000000018,6.0576710000000276 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                    <Path Fill="#FFFFFF"
+                        PathData="M11.25,10.096130000000017 C12.9807706,10.096130000000017 12.692310200000001,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849600000001,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576730000000225 12.403849600000001,6.0576730000000225 12.9807706,6.0576730000000225 12.9807706,6.0576730000000225 13.5576906,6.0576730000000225 15.0,6.0576730000000225 15.0,4.0384429999999725 13.5576906,4.0384429999999725 12.9807706,4.0384429999999725 12.692310200000001,4.0384429999999725 12.115388000000003,4.0384429999999725 13.5576906,4.0384429999999725 13.5576906,2.0192129999999793 12.115388000000003,2.0192129999999793 9.51923,2.0192129999999793 9.51923,2.0192129999999793 7.2115399999999994,2.0192129999999793 8.6538474999999977,2.0192129999999793 8.6538474999999977,-1.7000000013922545E-5 7.2115399999999994,-1.7000000013922545E-5 5.76923,-1.7000000013922545E-5 4.6153800000000018,-1.7000000013922545E-5 3.4615399999999994,0.28844299999997247 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040602999999976 1.1538474999999977,1.7307500000000005 0.72504949999999724,2.0655100000000175 0.20812730000000101,2.382093999999995 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.51921299999998 0.33908759999999916,10.067859999999996 1.1538474999999977,10.096130000000017 1.7307705999999996,10.096130000000017 4.9038474999999977,10.096130000000017 8.6538474999999977,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192129999999793 L5.4807706,2.0192129999999793 M12.115388000000003,4.0384429999999725 L8.3653800000000018,4.0384429999999725 M12.403849600000001,6.0576730000000225 L8.3653800000000018,6.0576730000000225 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5">
+                        <LinearGradient Attribute="Fill"
+                            EndPoint="1.0,0.0" SpreadMethod="Pad" StartPoint="0.0,0.0">
+                            <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                            <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                            <GradientStop Color="#60000000" Offset="1.0"/>
+                        </LinearGradient>
+                    </Path>
+                </Component>
+            </Component>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="AlarmCtrl" Height="20.0" Left="80"
+                Model="AlarmBind" Name="cmpAlarm" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#F0080E" Height="20.0" Left="0"
+                    RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="AlarmColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
+                </Rectangle>
+                <Path Fill="#FFD100" Name="B1"
+                    PathData="M11.8,15.15 C11.8,15.5640001 10.994,15.9 10.0,15.9 9.006,15.9 8.20000001,15.5640001 8.20000001,15.15 8.20000001,14.736 9.006,14.4 10.0,14.4 10.994,14.4 11.8,14.736 11.8,15.15 z M11.0,3.75 C11.0,4.164 10.55200001,4.5 10.0,4.5 9.448,4.5 9.0,4.164 9.0,3.75 9.0,3.336000001 9.448,3.0 10.0,3.0 10.55200001,3.0 11.0,3.336000001 11.0,3.75 z"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="8.199998259544" Opacity="1.0"
+                    Stroke="#4B000000" StrokeDashArray="0.0"
+                    StrokeWidth=".5" Top="14.399997115135" Width="3.60000014305115"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="9.0" Opacity="1.0" Stroke="#4B000000"
+                    StrokeDashArray="0.0" StrokeWidth=".5" Top="3.0" Width="2.0"/>
+                <Curve Fill="#FFD100" Name="B2" Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Curve Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#5F000000" StrokeDashArray="0.0" StrokeWidth=".5">
+                    <LinearGradient Attribute="Fill" EndPoint="1.0,0.0"
+                        SpreadMethod="Pad" StartPoint="0.0,0.0">
+                        <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                        <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#60000000" Offset="1.0"/>
+                    </LinearGradient>
+                </Curve>
+            </Component>
+        </Group>
+        <TargetArea Height="40" Left="0" Top="0" Width="100"/>
+        <Script OnDocumentLoad="load" OnMouseClick="" OnMouseDown=""
+            OnMouseMove="" OnMouseOut="" OnMouseOver="" OnMouseUp="" OnSignalChange="change"><![CDATA[/**==========================================================================================
+ * Main Object
+ */
+var Main = {
+	load: function(e) {
+		var comp = e.getCurrentTarget(),
+			displayChildren = comp.getChild("display").getChildNodes();
+		
+		this.widgets = {};
+		for(var i = 0, max = displayChildren.length; i < max; i += 1) {
+			var child = displayChildren.item(i);
+			if(child.hasAttribute("Model")) {
+				var model = String(child.getAttribute("Model")),
+					ctrl = String(child.getAttribute("Ctrl"));
+				this.widgets[model] = Object.create(eval(ctrl));
+				this.widgets[model].init(child);
+			}
+		}				
+	},
+	
+	change: function(e) {
+		e.preventDefault();
+		var dscr = String(e.getTarget().getAttribute("Description"));
+		if(this.widgets.hasOwnProperty(dscr)) {
+			this.widgets[dscr].update(e);
+		}
+		
+		this.widgets["Background"].update(e);
+	}
+};
+
+/**==========================================================================================
+ * Event Callback Functions
+ */
+
+function load(evt){	
+	Main.load(evt);
+}
+
+function change(evt) {	
+	Main.change(evt);
+}
+
+function click(evt) {
+	Main.click(evt);
+}
+
+/**==========================================================================================
+ * Helper Functions
+ */
+if (!Object.create) {
+	Object.create = function(base) {
+		function F () {};
+		F.prototype = base;
+		return new F();
+	};
+}
+
+var isUndefined = function(o) {
+	if(typeof(o) === "undefined") {
+		return true;			
+	}
+	return false;	
+};
+
+var getBool = function(s) {
+	var trueEnum = ["yes", "y", "Yes", "Y", "1", "True", "true", "T", "t", "On", "active"];
+	var i = trueEnum.length;
+	while(i--) {
+		if(String(s) === trueEnum[i]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/**==========================================================================================
+ * Value Ctrl
+ */
+ var ValueCtrl = {
+ 	init: function(node) { 		
+ 		var type = "Text";
+ 		if(node.hasAttribute("Type")) {
+ 			type = String(node.getAttribute("Type"));
+ 		}
+ 		
+ 		switch(type) {
+		case "Analog":
+			this.txt = Object.create(AnalogCtrl);
+			break;
+		case "Digital":
+			this.txt = Object.create(DigitalCtrl);
+			break;
+		case "Multi":
+			this.txt = Object.create(MultiCtrl);
+			break;
+		case "Enum":
+			this.txt = Object.create(EnumCtrl);
+			break;
+		default:
+			this.txt = Object.create(TextCtrl);
+			break;				
+		}
+		
+		this.txt.init(node);
+ 	},
+ 	update: function(e) {
+ 		this.txt.update(e);
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Force Ctrl
+ */
+ var ForceCtrl = {
+ 	init: function(node) {
+ 		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name")),
+ 			lastName = String(name.split(".").splice(-1)).replace(/\d/g,''),
+ 			value = e.getValue();
+ 			status = false;
+ 		 
+		switch(lastName) {
+		case "OutOfService":
+			status = getBool(value);		
+			break;
+		case "Priority":
+			status = value !== null;
+			break;
+		case "ActiveCommandPriority":
+			if(value !== null && value < 10) {
+				status = true;
+			}
+			break;
+		default:
+		}
+
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);	
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Alarm Ctrl
+ */
+var AlarmCtrl = {
+	init: function(node) {
+		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 		
+ 		this.values = {};
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name"));
+ 		this.values[name] = +e.getValue();
+ 		
+ 		var status = false;
+ 		
+ 		for(var key in this.values) {
+ 			if(this.values[key] !== 0) {
+ 				status = true;
+ 			}
+ 		}
+ 		
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);
+ 	}
+};
+
+/**==========================================================================================
+ * Analog Control
+ */
+var AnalogCtrl = {
+	init: function(node) {
+		this.decimals = 0;
+		this.units = "";
+		this.prefix = "";
+		this.suffix = "";
+		this.showUnits = true;
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+		
+		if(node.hasAttribute("Decimals")) {		
+			this.decimals = +node.getAttribute("Decimals");
+		}
+					
+		if(node.hasAttribute("Prefix")) {		
+			this.prefix = String(node.getAttribute("Prefix"));
+		}
+		
+		if(node.hasAttribute("Suffix")) {		
+			this.suffix = String(node.getAttribute("Suffix"));
+		}
+		
+		if(node.hasAttribute("ShowUnits")) {		
+			this.showUnits = String(node.getAttribute("ShowUnits"));
+		}
+	},
+	update: function(e) {
+		var value = +e.getValue(),
+			units = String(e.getUnit());
+
+		this.txt.setContent(this.prefix + value.toFixed(this.decimals) + this.suffix + (this.showUnits ? " " + units : ""));
+	}
+};
+
+/**==========================================================================================
+ * Digital Control
+ */
+var DigitalCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 2;
+		while(i--) {
+			this.states[i] = String(node.getAttribute("State" + i));
+		}		
+	},
+	update: function(e) {	
+		var content = getBool(e.getValue()) ? this.states[1] : this.states[0];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Multi Control
+ */
+var MultiCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 1;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Enum Control
+ */
+var EnumCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 0;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Text Control
+ */
+var TextCtrl = {
+	init: function(node) {
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);		
+	},
+	update: function(e) {
+		this.txt.setContent(String(e.getValue()));
+	}
+};
+
+/**==========================================================================================
+ * Background Control
+ */
+ 
+var BgdCtrl = {
+	init: function(node) {
+		if(node) {
+			if(node.hasAttribute("Stroke")) {
+				this.normalColor = node.getAttribute("Stroke");
+			}
+			this.forcedColor = "#FFFF00";
+			if(node.hasAttribute("ForcedColor")) {
+				this.forcedColor = node.getAttribute("ForcedColor");
+			}
+			this.alarmColor = "#FF0000";
+			if(node.hasAttribute("AlarmColor")) {
+				this.alarmColor = node.getAttribute("AlarmColor");
+			}
+		
+			this.rct = Object.create(Rectangle);
+			this.rct.init(node);
+			
+			this.values = {};
+		}
+	},
+	update: function(e) {
+		var name = String(e.getTarget().getAttribute("Name")),
+			description = String(e.getTarget().getAttribute("Description"));
+		
+		if(!this.values.hasOwnProperty(name)) {
+			this.values[name] = {value: e.getValue(), dscr: description};
+		}
+		
+		this.values[name].value = e.getValue();
+		
+		var alarmStatus = false,
+			forceStatus = false;
+		for(var key in this.values) {
+			var val = this.values[key];
+			if(val.dscr === "ForceBind") {
+				var lastName = String(String(key).split(".").splice(-1)).replace(/\d/g,'');
+ 		 		
+				switch(lastName) {
+				case "OutOfService":
+					forceStatus = getBool(val.value);		
+					break;
+				case "Priority":
+					forceStatus = val.value !== null;
+					break;
+				case "ActiveCommandPriority":
+					if(val.value !== null && val.value < 10) {
+						forceStatus = true;
+					}
+					break;
+				default:
+				}
+			} else if(val.dscr === "AlarmBind") {
+				var alarmVal = +val.value;
+				if(alarmVal !== 0) {
+					alarmStatus = true;
+				}
+			}
+		}		
+		var stroke = this.normalColor,
+			strokeWidth = 1;
+
+		if(forceStatus) {
+			stroke = this.forcedColor;
+			strokeWidth = 2;
+		}
+		if(alarmStatus) {
+			stroke = this.alarmColor;
+			strokeWidth = 2;
+		}
+		this.rct.setStroke(stroke);
+		this.rct.setStrokeWidth(strokeWidth);
+	}
+}
+
+/**==========================================================================================
+ * Bind Object
+ */
+var Bind = {
+	init: function(node) {
+		this.node = node;
+		if(this.node) {
+			this.fbn = this.node.getFullBindName();
+		}
+	},
+	enableUpdates: function(){
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Enable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	disableUpdates: function() {
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Disable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	displayProperties: function() {
+		if(this.fbn) {
+			invoke(this.fbn,"EditProperties");
+		}
+	},
+	relinquish: function() {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn,null);	
+			}
+		}
+		catch(err) {
+		}
+	},
+	write: function(val) {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn, val);
+			}
+		}
+		catch(err) {
+		}
+	}
+};
+
+/**==========================================================================================
+ * Animate Object
+ */
+var Animate = {
+	init: function(node) {
+		this.node = node;
+	},
+	setAnimation: function(b) {
+		this.node.setAttribute("Animation", b ? "Start": "Stop");
+	}
+}
+
+/**==========================================================================================
+ * Rectangle Object
+ */
+var Rectangle = {
+	init: function(node) {
+		this.node = node;
+	},
+	setFill: function(s) {
+		this.node.setAttribute("Fill", s);
+	},
+	setStroke: function(s) {
+		this.node.setAttribute("Stroke", s);
+	},
+	setStrokeWidth: function(s) {
+		this.node.setAttribute("StrokeWidth", s);
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+}
+
+/**==========================================================================================
+ * TextBox Object
+ */
+var TextBox = {
+	init: function(node) {
+		this.node = node;
+	},
+	setContent: function(s) {
+		this.node.setAttribute("Content", s);
+	}
+};
+
+/**==========================================================================================
+ * Component Object
+ */
+var Component = {
+	init: function(node) {
+		this.node = node;
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+};]]></Script>
+    </Component>
+    <TextBox FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+        FontWeight="Normal" Height="20.0" HorizontalAlign="Left"
+        Left="270.0" Opacity="1.0" Stroke="#000000"
+        TextDecoration="None" Top="40.0" VerticalAlign="Top" Width="90.0"><![CDATA[Digital Input]]></TextBox>
+    <TextBox FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
+        FontWeight="Normal" Height="20.0" HorizontalAlign="Left"
+        Left="265.0" Opacity="1.0" Stroke="#000000"
+        TextDecoration="None" Top="145.0" VerticalAlign="Top" Width="100.0"><![CDATA[Digital Output]]></TextBox>
+    <Component Clip="False" ContentHeight="40.0" ContentWidth="100.0"
+        Height="40.0" Id="SaFanCmd" Left="265.0" Name="" Top="165.0" Width="100.0">
+        <Group Name="binds">
+            <Bind Description="ValueBind" Name="SaFanCmd">
+                <Expose ExposedAttribute="Name" Name="ValueBind"/>
+            </Bind>
+            <Bind Description="ForceBind" DynamicUpdates="Enable"
+                Name="SaFanCmd.ActiveCommandPriority" PreventDefault="True">
+                <Expose ExposedAttribute="Name" Name="OOSBind"/>
+            </Bind>
+        </Group>
+        <Group Name="display">
+            <Rectangle AlarmColor="#F0080E" Ctrl="BgdCtrl" Fill="None"
+                ForcedColor="#FFD100" Height="20.0" Left="0.0"
+                Model="Background" Name="rctBackground" RadiusX="5"
+                RadiusY="5" Stroke="#626469" StrokeDashArray="0.0"
+                StrokeWidth="1.0" Top="20" Width="100.0">
+                <LinearGradient EndPoint="0,1">
+                    <GradientStop Color="#FEFEFE" Offset="0"/>
+                    <GradientStop Color="#DFE0E2" Offset="1.0"/>
+                </LinearGradient>
+            </Rectangle>
+            <TextBox Fill="None" FontFamily="Arial" FontSize="15.0"
+                FontStyle="Normal" FontWeight="Normal" Height="20.0"
+                HorizontalAlign="Center" Left="0.0" Name="txtTitle"
+                Stroke="#000000" TextDecoration="None" Top="0.0"
+                Type="Analog" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[Fan Command]]><Expose
+                    ExposedAttribute="Content" Name="Text Content"/>
+            </TextBox>
+            <TextBox Ctrl="ValueCtrl" Fill="None" FontFamily="Arial"
+                FontSize="15.0" FontStyle="Normal" FontWeight="Normal"
+                Height="20.0" HorizontalAlign="Center" Left="0.0"
+                Model="ValueBind" Name="txtValue" State0="Stop"
+                State1="Start" Stroke="#000000" TextDecoration="None"
+                Top="20.0" Type="Digital" VerticalAlign="Middle"
+                    Width="100.0"><![CDATA[---]]><Expose
+                    ExposedAttribute="Content" Name="Point Content"/>
+                <Expose ExposedAttribute="State0" Name="State0"/>
+                <Expose ExposedAttribute="State1" Name="State1"/>
+            </TextBox>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="ForceCtrl" Height="20.0" Left="0"
+                Model="ForceBind" Name="cmpForced" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
+                    RadiusY="5" Stroke="None" Width="20">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="ForcedColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
+                </Rectangle>
+                <Component Clip="False" ContentHeight="10.1"
+                    ContentWidth="15.0" Height="10.1" Left="4" Top="5" Width="15.0">
+                    <Path Fill="#E3BC67" Name="B1"
+                        PathData="M11.25,10.096130000000017 C12.980770399999997,10.096130000000017 12.6923101,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849399999999,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576710000000276 12.403849399999999,6.0576710000000276 12.980770399999997,6.0576710000000276 12.980770399999997,6.0576710000000276 13.557690399999999,6.0576710000000276 15.0,6.0576710000000276 15.0,4.0384409999999775 13.557690399999999,4.0384409999999775 12.980770399999997,4.0384409999999775 12.6923101,4.0384409999999775 12.115386999999998,4.0384409999999775 13.557690399999999,4.0384409999999775 13.557690399999999,2.0192109999999843 12.115386999999998,2.0192109999999843 9.51923,2.0192109999999843 9.51923,2.0192109999999843 7.2115399999999994,2.0192109999999843 8.6538473000000025,2.0192109999999843 8.6538473000000025,-1.900000000887303E-5 7.2115399999999994,-1.900000000887303E-5 5.76923,-1.900000000887303E-5 4.6153800000000018,-1.900000000887303E-5 3.4615399999999994,0.28844099999997752 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040600999999981 1.1538473000000025,1.7307500000000005 0.725049300000002,2.0655100000000175 0.20812709999999868,2.382092 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.5192109999999843 0.33908739999999682,10.067859999999996 1.1538473000000025,10.096130000000017 1.7307703999999973,10.096130000000017 4.9038473000000025,10.096130000000017 8.6538473000000025,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192109999999843 L5.4807703999999973,2.0192109999999843 M12.115386999999998,4.0384409999999775 L8.3653800000000018,4.0384409999999775 M12.403849399999999,6.0576710000000276 L8.3653800000000018,6.0576710000000276 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                    <Path Fill="#FFFFFF"
+                        PathData="M11.25,10.096130000000017 C12.9807706,10.096130000000017 12.692310200000001,8.0769000000000233 11.25,8.0769000000000233 11.826920000000001,8.0769000000000233 11.826920000000001,8.0769000000000233 12.403849600000001,8.0769000000000233 13.846150000000002,8.0769000000000233 13.846150000000002,6.0576730000000225 12.403849600000001,6.0576730000000225 12.9807706,6.0576730000000225 12.9807706,6.0576730000000225 13.5576906,6.0576730000000225 15.0,6.0576730000000225 15.0,4.0384429999999725 13.5576906,4.0384429999999725 12.9807706,4.0384429999999725 12.692310200000001,4.0384429999999725 12.115388000000003,4.0384429999999725 13.5576906,4.0384429999999725 13.5576906,2.0192129999999793 12.115388000000003,2.0192129999999793 9.51923,2.0192129999999793 9.51923,2.0192129999999793 7.2115399999999994,2.0192129999999793 8.6538474999999977,2.0192129999999793 8.6538474999999977,-1.7000000013922545E-5 7.2115399999999994,-1.7000000013922545E-5 5.76923,-1.7000000013922545E-5 4.6153800000000018,-1.7000000013922545E-5 3.4615399999999994,0.28844299999997247 2.3809600000000017,0.58771999999999025 2.0376899999999978,1.040602999999976 1.1538474999999977,1.7307500000000005 0.72504949999999724,2.0655100000000175 0.20812730000000101,2.382093999999995 0.0,2.8845900000000029 0.0,5.1922799999999825 0.0,7.2115099999999757 0.0,9.51921299999998 0.33908759999999916,10.067859999999996 1.1538474999999977,10.096130000000017 1.7307705999999996,10.096130000000017 4.9038474999999977,10.096130000000017 8.6538474999999977,10.096130000000017 11.25,10.096130000000017 M7.2115399999999994,2.0192129999999793 L5.4807706,2.0192129999999793 M12.115388000000003,4.0384429999999725 L8.3653800000000018,4.0384429999999725 M12.403849600000001,6.0576730000000225 L8.3653800000000018,6.0576730000000225 M11.25,8.0769000000000233 L8.3653800000000018,8.0769000000000233"
+                        Stroke="#505050" StrokeDashArray="0.0" StrokeWidth=".5">
+                        <LinearGradient Attribute="Fill"
+                            EndPoint="1.0,0.0" SpreadMethod="Pad" StartPoint="0.0,0.0">
+                            <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                            <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                            <GradientStop Color="#60000000" Offset="1.0"/>
+                        </LinearGradient>
+                    </Path>
+                </Component>
+            </Component>
+            <Component Clip="False" ContentHeight="20" ContentWidth="20"
+                Ctrl="AlarmCtrl" Height="20.0" Left="80"
+                Model="AlarmBind" Name="cmpAlarm" Top="20"
+                Visibility="Hidden" Width="20.0">
+                <Rectangle Fill="#F0080E" Height="20.0" Left="0"
+                    RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
+                    <Animate Animation="Stop" Attribute="Fill"
+                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        <Expose ExposedAttribute="From" Name="AlarmColor"/>
+                    </Animate>
+                    <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
+                </Rectangle>
+                <Path Fill="#FFD100" Name="B1"
+                    PathData="M11.8,15.15 C11.8,15.5640001 10.994,15.9 10.0,15.9 9.006,15.9 8.20000001,15.5640001 8.20000001,15.15 8.20000001,14.736 9.006,14.4 10.0,14.4 10.994,14.4 11.8,14.736 11.8,15.15 z M11.0,3.75 C11.0,4.164 10.55200001,4.5 10.0,4.5 9.448,4.5 9.0,4.164 9.0,3.75 9.0,3.336000001 9.448,3.0 10.0,3.0 10.55200001,3.0 11.0,3.336000001 11.0,3.75 z"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="8.199998259544" Opacity="1.0"
+                    Stroke="#4B000000" StrokeDashArray="0.0"
+                    StrokeWidth=".5" Top="14.399997115135" Width="3.60000014305115"/>
+                <Ellipse Fill="None" Height="1.50002274259486"
+                    Left="9.0" Opacity="1.0" Stroke="#4B000000"
+                    StrokeDashArray="0.0" StrokeWidth=".5" Top="3.0" Width="2.0"/>
+                <Curve Fill="#FFD100" Name="B2" Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#FFD100" StrokeDashArray="0.0" StrokeWidth=".5"/>
+                <Curve Opacity="1.0"
+                    Points="10.0,15.0 11.500100146817,15.0 15.100154729045,15.0 16.0,14.399997115135 16.0,13.799997091293 16.0,13.500148719784 15.399998545647,12.59999704361 14.500145632008,11.70012142867 14.500145632008,11.100112331632 14.199998497963,9.59999692439999 13.900136534969,7.79999685287498 13.30012743793,5.700030458291 11.799998402596,4.19999670982401 11.500100146817,3.90000316717698 10.632542525376,3.59999668598198 10.0,3.59999668598198 9.367612283068,3.59999668598198 8.500054661628,3.90000316717698 8.199998259544,4.19999670982401 6.70002737051399,5.39999675750698 6.100018273475,7.79999685287498 5.799998164177,9.59999692439999 5.500009176437,11.100112331632 5.500009176437,11.70012142867 4.599998116493,12.59999704361 4.0,13.500148719784 4.0,13.799997091293 4.0,14.399997115135 5.199998140335,15.0 8.500054661628,15.0 10.0,15.0"
+                    Stroke="#5F000000" StrokeDashArray="0.0" StrokeWidth=".5">
+                    <LinearGradient Attribute="Fill" EndPoint="1.0,0.0"
+                        SpreadMethod="Pad" StartPoint="0.0,0.0">
+                        <GradientStop Color="#ABFFFFFF" Offset="0.0"/>
+                        <GradientStop Color="#01FFFFFF" Offset="0.5"/>
+                        <GradientStop Color="#60000000" Offset="1.0"/>
+                    </LinearGradient>
+                </Curve>
+            </Component>
+        </Group>
+        <TargetArea Height="40" Left="0" Top="0" Width="100"/>
+        <Script OnDocumentLoad="load" OnMouseClick="" OnMouseDown=""
+            OnMouseMove="" OnMouseOut="" OnMouseOver="" OnMouseUp="" OnSignalChange="change"><![CDATA[/**==========================================================================================
+ * Main Object
+ */
+var Main = {
+	load: function(e) {
+		var comp = e.getCurrentTarget(),
+			displayChildren = comp.getChild("display").getChildNodes();
+		
+		this.widgets = {};
+		for(var i = 0, max = displayChildren.length; i < max; i += 1) {
+			var child = displayChildren.item(i);
+			if(child.hasAttribute("Model")) {
+				var model = String(child.getAttribute("Model")),
+					ctrl = String(child.getAttribute("Ctrl"));
+				this.widgets[model] = Object.create(eval(ctrl));
+				this.widgets[model].init(child);
+			}
+		}				
+	},
+	
+	change: function(e) {
+		e.preventDefault();
+		var dscr = String(e.getTarget().getAttribute("Description"));
+		if(this.widgets.hasOwnProperty(dscr)) {
+			this.widgets[dscr].update(e);
+		}
+		
+		this.widgets["Background"].update(e);
+	}
+};
+
+/**==========================================================================================
+ * Event Callback Functions
+ */
+
+function load(evt){	
+	Main.load(evt);
+}
+
+function change(evt) {	
+	Main.change(evt);
+}
+
+function click(evt) {
+	Main.click(evt);
+}
+
+/**==========================================================================================
+ * Helper Functions
+ */
+if (!Object.create) {
+	Object.create = function(base) {
+		function F () {};
+		F.prototype = base;
+		return new F();
+	};
+}
+
+var isUndefined = function(o) {
+	if(typeof(o) === "undefined") {
+		return true;			
+	}
+	return false;	
+};
+
+var getBool = function(s) {
+	var trueEnum = ["yes", "y", "Yes", "Y", "1", "True", "true", "T", "t", "On", "active"];
+	var i = trueEnum.length;
+	while(i--) {
+		if(String(s) === trueEnum[i]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/**==========================================================================================
+ * Value Ctrl
+ */
+ var ValueCtrl = {
+ 	init: function(node) { 		
+ 		var type = "Text";
+ 		if(node.hasAttribute("Type")) {
+ 			type = String(node.getAttribute("Type"));
+ 		}
+ 		
+ 		switch(type) {
+		case "Analog":
+			this.txt = Object.create(AnalogCtrl);
+			break;
+		case "Digital":
+			this.txt = Object.create(DigitalCtrl);
+			break;
+		case "Multi":
+			this.txt = Object.create(MultiCtrl);
+			break;
+		case "Enum":
+			this.txt = Object.create(EnumCtrl);
+			break;
+		default:
+			this.txt = Object.create(TextCtrl);
+			break;				
+		}
+		
+		this.txt.init(node);
+ 	},
+ 	update: function(e) {
+ 		this.txt.update(e);
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Force Ctrl
+ */
+ var ForceCtrl = {
+ 	init: function(node) {
+ 		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name")),
+ 			lastName = String(name.split(".").splice(-1)).replace(/\d/g,''),
+ 			value = e.getValue();
+ 			status = false;
+ 		 
+		switch(lastName) {
+		case "OutOfService":
+			status = getBool(value);		
+			break;
+		case "Priority":
+			status = value !== null;
+			break;
+		case "ActiveCommandPriority":
+			if(value !== null && value < 10) {
+				status = true;
+			}
+			break;
+		default:
+		}
+
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);	
+ 	}
+ };
+ 
+/**==========================================================================================
+ * Alarm Ctrl
+ */
+var AlarmCtrl = {
+	init: function(node) {
+		this.cmp = Object.create(Component);
+ 		this.cmp.init(node);
+ 		this.ani = Object.create(Animate);
+ 		this.ani.init(node.getChildByName("aniBlink"));
+ 		
+ 		this.values = {};
+ 	},
+ 	update: function(e) {
+ 		var name = String(e.getTarget().getAttribute("Name"));
+ 		this.values[name] = +e.getValue();
+ 		
+ 		var status = false;
+ 		
+ 		for(var key in this.values) {
+ 			if(this.values[key] !== 0) {
+ 				status = true;
+ 			}
+ 		}
+ 		
+ 		this.cmp.setVisibility(status);
+ 		this.ani.setAnimation(status);
+ 	}
+};
+
+/**==========================================================================================
+ * Analog Control
+ */
+var AnalogCtrl = {
+	init: function(node) {
+		this.decimals = 0;
+		this.units = "";
+		this.prefix = "";
+		this.suffix = "";
+		this.showUnits = true;
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+		
+		if(node.hasAttribute("Decimals")) {		
+			this.decimals = +node.getAttribute("Decimals");
+		}
+					
+		if(node.hasAttribute("Prefix")) {		
+			this.prefix = String(node.getAttribute("Prefix"));
+		}
+		
+		if(node.hasAttribute("Suffix")) {		
+			this.suffix = String(node.getAttribute("Suffix"));
+		}
+		
+		if(node.hasAttribute("ShowUnits")) {		
+			this.showUnits = String(node.getAttribute("ShowUnits"));
+		}
+	},
+	update: function(e) {
+		var value = +e.getValue(),
+			units = String(e.getUnit());
+
+		this.txt.setContent(this.prefix + value.toFixed(this.decimals) + this.suffix + (this.showUnits ? " " + units : ""));
+	}
+};
+
+/**==========================================================================================
+ * Digital Control
+ */
+var DigitalCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 2;
+		while(i--) {
+			this.states[i] = String(node.getAttribute("State" + i));
+		}		
+	},
+	update: function(e) {	
+		var content = getBool(e.getValue()) ? this.states[1] : this.states[0];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Multi Control
+ */
+var MultiCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 1;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Enum Control
+ */
+var EnumCtrl = {
+	init: function(node) {
+		this.states = [];
+		
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);
+				
+		i = 0;
+		while(node.hasAttribute("State" + i)) {
+			this.states[i] = String(node.getAttribute("State" + i));
+			i += 1;
+		}		
+	},
+	update: function(e) {
+		var content = this.states[+e.getValue()];
+		this.txt.setContent(content);
+	}
+};
+
+/**==========================================================================================
+ * Text Control
+ */
+var TextCtrl = {
+	init: function(node) {
+		this.txt = Object.create(TextBox);
+		this.txt.init(node);		
+	},
+	update: function(e) {
+		this.txt.setContent(String(e.getValue()));
+	}
+};
+
+/**==========================================================================================
+ * Background Control
+ */
+ 
+var BgdCtrl = {
+	init: function(node) {
+		if(node) {
+			if(node.hasAttribute("Stroke")) {
+				this.normalColor = node.getAttribute("Stroke");
+			}
+			this.forcedColor = "#FFFF00";
+			if(node.hasAttribute("ForcedColor")) {
+				this.forcedColor = node.getAttribute("ForcedColor");
+			}
+			this.alarmColor = "#FF0000";
+			if(node.hasAttribute("AlarmColor")) {
+				this.alarmColor = node.getAttribute("AlarmColor");
+			}
+		
+			this.rct = Object.create(Rectangle);
+			this.rct.init(node);
+			
+			this.values = {};
+		}
+	},
+	update: function(e) {
+		var name = String(e.getTarget().getAttribute("Name")),
+			description = String(e.getTarget().getAttribute("Description"));
+		
+		if(!this.values.hasOwnProperty(name)) {
+			this.values[name] = {value: e.getValue(), dscr: description};
+		}
+		
+		this.values[name].value = e.getValue();
+		
+		var alarmStatus = false,
+			forceStatus = false;
+		for(var key in this.values) {
+			var val = this.values[key];
+			if(val.dscr === "ForceBind") {
+				var lastName = String(String(key).split(".").splice(-1)).replace(/\d/g,'');
+ 		 		
+				switch(lastName) {
+				case "OutOfService":
+					forceStatus = getBool(val.value);		
+					break;
+				case "Priority":
+					forceStatus = val.value !== null;
+					break;
+				case "ActiveCommandPriority":
+					if(val.value !== null && val.value < 10) {
+						forceStatus = true;
+					}
+					break;
+				default:
+				}
+			} else if(val.dscr === "AlarmBind") {
+				var alarmVal = +val.value;
+				if(alarmVal !== 0) {
+					alarmStatus = true;
+				}
+			}
+		}		
+		var stroke = this.normalColor,
+			strokeWidth = 1;
+
+		if(forceStatus) {
+			stroke = this.forcedColor;
+			strokeWidth = 2;
+		}
+		if(alarmStatus) {
+			stroke = this.alarmColor;
+			strokeWidth = 2;
+		}
+		this.rct.setStroke(stroke);
+		this.rct.setStrokeWidth(strokeWidth);
+	}
+}
+
+/**==========================================================================================
+ * Bind Object
+ */
+var Bind = {
+	init: function(node) {
+		this.node = node;
+		if(this.node) {
+			this.fbn = this.node.getFullBindName();
+		}
+	},
+	enableUpdates: function(){
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Enable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	disableUpdates: function() {
+		try {
+			if(this.node) {
+				this.node.setAttribute("DynamicUpdates", "Disable");
+			}
+		}
+		catch(err) {
+		}
+	},
+	displayProperties: function() {
+		if(this.fbn) {
+			invoke(this.fbn,"EditProperties");
+		}
+	},
+	relinquish: function() {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn,null);	
+			}
+		}
+		catch(err) {
+		}
+	},
+	write: function(val) {
+		try {
+			if(this.fbn) {
+				setValue(this.fbn, val);
+			}
+		}
+		catch(err) {
+		}
+	}
+};
+
+/**==========================================================================================
+ * Animate Object
+ */
+var Animate = {
+	init: function(node) {
+		this.node = node;
+	},
+	setAnimation: function(b) {
+		this.node.setAttribute("Animation", b ? "Start": "Stop");
+	}
+}
+
+/**==========================================================================================
+ * Rectangle Object
+ */
+var Rectangle = {
+	init: function(node) {
+		this.node = node;
+	},
+	setFill: function(s) {
+		this.node.setAttribute("Fill", s);
+	},
+	setStroke: function(s) {
+		this.node.setAttribute("Stroke", s);
+	},
+	setStrokeWidth: function(s) {
+		this.node.setAttribute("StrokeWidth", s);
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+}
+
+/**==========================================================================================
+ * TextBox Object
+ */
+var TextBox = {
+	init: function(node) {
+		this.node = node;
+	},
+	setContent: function(s) {
+		this.node.setAttribute("Content", s);
+	}
+};
+
+/**==========================================================================================
+ * Component Object
+ */
+var Component = {
+	init: function(node) {
+		this.node = node;
+	},
+	setVisibility: function(b) {
+		this.node.setAttribute("Visibility", b ? "Visible" : "Hidden");
+	}
+};]]></Script>
+    </Component>
+</Tgml>
