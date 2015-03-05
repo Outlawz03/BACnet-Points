@@ -2,7 +2,7 @@
 
 <!--[DocumentInformation]
 Created: 2014-07-09 07:45
-Modified: 2015-03-04 17:12
+Modified: 2015-03-05 13:40
 -->
 <?tgml version="1.21"?><Tgml ComponentCounter="109" GridSize="5"
     Height="900.0" LayerCounter="3" Width="1710.0">
@@ -60,7 +60,7 @@ Modified: 2015-03-04 17:12
                 <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
                     RadiusY="5" Stroke="None" Width="20">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        Duration="1" From="#FFD100" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="ForcedColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
@@ -89,7 +89,7 @@ Modified: 2015-03-04 17:12
                 <Rectangle Fill="#F0080E" Height="20.0" Left="0"
                     RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        Duration="1" From="#F0080E" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="AlarmColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
@@ -661,7 +661,7 @@ var Component = {
                 <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
                     RadiusY="5" Stroke="None" Width="20">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        Duration="1" From="#FFD100" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="ForcedColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
@@ -690,7 +690,7 @@ var Component = {
                 <Rectangle Fill="#F0080E" Height="20.0" Left="0"
                     RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        Duration="1" From="#F0080E" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="AlarmColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
@@ -1252,7 +1252,7 @@ var Component = {
                 <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
                     RadiusY="5" Stroke="None" Width="20">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        Duration="1" From="#FFD100" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="ForcedColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
@@ -1281,7 +1281,7 @@ var Component = {
                 <Rectangle Fill="#F0080E" Height="20.0" Left="0"
                     RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        Duration="1" From="#F0080E" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="AlarmColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
@@ -1850,7 +1850,7 @@ var Component = {
                 <Rectangle Fill="#FFD100" Height="20" RadiusX="5"
                     RadiusY="5" Stroke="None" Width="20">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#FFD100" Name="aniBlink" To="None">
+                        Duration="1" From="#FFD100" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="ForcedColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="ForcedColor"/>
@@ -1879,7 +1879,7 @@ var Component = {
                 <Rectangle Fill="#F0080E" Height="20.0" Left="0"
                     RadiusX="5" RadiusY="5" Stroke="None" Top="0" Width="20.0">
                     <Animate Animation="Stop" Attribute="Fill"
-                        Duration="1" From="#F0080E" Name="aniBlink" To="None">
+                        Duration="1" From="#F0080E" Name="aniBlink" To="#01FFFFFF">
                         <Expose ExposedAttribute="From" Name="AlarmColor"/>
                     </Animate>
                     <Expose ExposedAttribute="Fill" Name="AlarmColor"/>
