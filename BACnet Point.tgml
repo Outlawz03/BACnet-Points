@@ -2,7 +2,7 @@
 
 <!--[DocumentInformation]
 Created: 2014-07-09 07:45
-Modified: 2015-03-06 13:04
+Modified: 2015-05-21 10:09
 -->
 <?tgml version="1.21"?><Tgml ComponentCounter="109" GridSize="5"
     Height="900.0" LayerCounter="3" Width="1710.0">
@@ -22,7 +22,7 @@ Modified: 2015-03-06 13:04
             </Bind>
             <Bind Description="ForceBind" DynamicUpdates="Enable"
                 Name="SaFanSpd.ActiveCommandPriority" PreventDefault="True">
-                <Expose ExposedAttribute="Name" Name="OOSBind"/>
+                <Expose ExposedAttribute="Name" Name="ForceBind"/>
             </Bind>
         </Group>
         <Group Name="display">
@@ -48,7 +48,7 @@ Modified: 2015-03-06 13:04
                 FontFamily="Arial" FontSize="15.0" FontStyle="Normal"
                 FontWeight="Normal" Height="20.0"
                 HorizontalAlign="Center" Left="0.0" Model="ValueBind"
-                Name="txtValue" Prefix="" ShowUnits="false"
+                Name="txtValue" Prefix="" ShowUnits="true"
                 Stroke="#000000" Suffix="" TextDecoration="None"
                 Top="20.0" Type="Analog" VerticalAlign="Middle"
                     Width="100.0"><![CDATA[---]]><Expose
